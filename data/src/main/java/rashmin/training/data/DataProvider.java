@@ -7,6 +7,7 @@ import rashmin.training.model.Room;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DataProvider {
     private List<Hotel> hotels = new ArrayList<Hotel>();
@@ -15,9 +16,10 @@ public class DataProvider {
         init();
     }
 
-//    public List<Room> getRooms(String name){
-//
-//    }
+    public List<Room> getRooms(String name){
+        List<Contract> contracts = hotels.stream().filter(i->i.getName()==name).findFirst().get().getContracts();
+        return contracts.stream().flatMap(i->i.getRooms().stream()).collect(Collectors.toList());
+    }
 
     public void init(){
         Hotel h1 = new Hotel();
