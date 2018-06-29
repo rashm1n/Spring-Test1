@@ -6,6 +6,12 @@ public class Room {
     private int price;
     private int maxAdults;
 
+    public Room(String roomType, int price, int maxAdults) {
+        this.roomType = roomType;
+        this.price = price;
+        this.maxAdults = maxAdults;
+    }
+
     public String getRoomType() {
         return roomType;
     }

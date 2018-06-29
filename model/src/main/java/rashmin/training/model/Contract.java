@@ -20,7 +20,7 @@ public class Contract {
 
     public void setFromTo(String s1 , String s2){
         this.from=s1;
-        this.from=s2;
+        this.to=s2;
     }
 
     public String getFromTo(){
